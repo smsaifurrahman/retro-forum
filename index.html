@@ -8,7 +8,127 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
-<script></script>
+    <header class="container mx-auto  my-16">
+        <!-- NavBar section -->
+        <div>
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                  <a class="btn btn-ghost text-3xl font-bold">Retro</a>
+                </div>
+                <div class="flex-none">
+                
+                    <div class="flex">
+                        <div class="relative group">
+                            <img class="ml-4 " src="./images/Frame 2.png" alt="">
+                            <div class="absolute bg-gray-800 text-white text-center rounded-md p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bottom-full left-1/2 transform -translate-x-1/2">
+                                Home
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <img class="ml-4" src="./images/Frame 3.png" alt="">
+                            <div class="absolute bg-gray-800 text-white text-center rounded-md p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bottom-full left-1/2 transform -translate-x-1/2">
+                                Edit
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <img class="ml-4 " src="./images/Frame 4.png" alt="">
+                            <div class="absolute bg-gray-800 text-white text-center rounded-md p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bottom-full left-1/2 transform -translate-x-1/2">
+                                Add
+                            </div>
+                        </div>
+                        <div class="relative group">
+                            <img class="ml-4 " src="./images/Frame 5.png" alt="">
+                            <div class="absolute bg-gray-800 text-white text-center rounded-md p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bottom-full left-1/2 transform -translate-x-1/2">
+                                Flag
+                            </div>
+                        </div>
+                    </div>
+                    
+                 
+                  <button class="btn  ml-4 bg-[#797DFC] text-white">Sign in</button>
+
+                </div>
+              </div>
+        </div>
+        <!-- Banner section  -->
+        <section>
+            <!-- Banner start -->
+            <div class="flex justify-between mt-10 h-[400px] bg-[url('./images/bgbanner.png')] bg-cover bg-center items-center bg-[#12132D] rounded-2xl">
+                <div class="flex-1 text-white ml-4 lg:ml-24 gap-1 lg:gap-2">
+                    <h1 class=" text-3xl lg:text-6xl font-bold text-white">Welcome to the</h1>
+                    <h1 class="text-3xl lg:text-6xl font-bold my-3"><span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                    <p class=" my-6 pr-12 lg:pr-0">Share your favorite opinion and win and wp forum coffee mug!</p>
+                   <!-- <img src="./images/bgbanner.png" alt=""> -->
+                    <label class=" mt-4 input w-80 input-bordered flex items-center gap-2">
+                        <input type="text" class="" placeholder="Search" />
+                        <button class="btn w-28  rounded-3xl space-y-6 bg-[#797DFC] text-white">Sign in</button>
+                        
+                      </label>
+                    
+                </div>
+                <div class="flex-1 text-black  rounded-2xl">
+                    <div class="lg:ml-20 flex flex-col w-full lg:w-96 p-2 lg:p-6 rounded-xl bg-white">
+                        <div class="flex justify-between">
+                            <p>Registered Users </p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between  mt-4">
+                            <p>Forum</p>
+                            <p>05</p>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                            <p>Topics</p>
+                            <p>01</p>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                            <p>Replies</p>
+                            <p>01</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </header>
+    <main class="container mx-auto">
+        <div class="text-center mb-10">
+            <h1 class="text-4xl font-bold">Let's Discuss</h1>
+            <p class="text-xl px-2 lg:px-72 mt-4">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+        </div>
+        <!-- Discuss Card section -->
+        <section>
+            <div class="flex" >
+                <div class="w-3/5">
+                    <div class="card card-side bg-base-100 shadow-xl">
+                        <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+                        <div class="card-body">
+                          <h2 class="card-title">New movie is released!</h2>
+                          <p>Click the button to watch on Jetflix app.</p>
+                          <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Watch</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div>
+                    <div class="card card-side bg-base-100 shadow-xl">
+                        <figure><img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" alt="Movie"/></figure>
+                        <div class="card-body">
+                          <h2 class="card-title">New movie is released!</h2>
+                          <p>Click the button to watch on Jetflix app.</p>
+                          <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Watch</button>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+
+    </footer>
+<script src="forum.js"></script>
 </body>
 </html>
