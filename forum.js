@@ -1,7 +1,9 @@
 const getAllPosts = async () => {
-    loadingSpinner(true)
+    loadingSpinner(true);
+ 
+  
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
-    //  const res = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
+    
     const data = await res.json();
     const allPosts = data.posts;
     displayEachPost(allPosts)
@@ -29,7 +31,8 @@ const loadingSpinner = (isLoading) => {
         setTimeout(function() {
             // Your code to be executed after the delay
             loadSpinner.classList.add('hidden');
-        }, 2000);
+        }, 1500);
+        // loadSpinner.classList.add('hidden');
         
         
     }
@@ -111,7 +114,7 @@ const postAsRead = (title,viewCount) => {
    
 
     const  markReadCard = document.createElement('div');
-    markReadCard.classList = 'card  bg-base-100 shadow-xl mb-4  p-4';
+    markReadCard.classList = 'card  bg-base-100 shadow-xl mb-4 py-4 px-10';
     markReadCard.innerHTML = `
                             <div class="flex items-center justify-between">
                             <div class="">
@@ -200,4 +203,5 @@ const getLatestPosts = async () => {
     });
 
 }
+// setTimeout(getAllPosts, 2000)
 getLatestPosts()

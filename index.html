@@ -8,12 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="container mx-auto  my-16">
+    <header class="container mx-auto my-8 lg:my-16">
         <!-- NavBar section -->
         <div >
             <div class="navbar bg-base-100">
                 <div class="flex-1">
-                  <a class="btn btn-ghost text-3xl font-bold">Retro</a>
+                  <a class="btn btn-ghost text-3xl lg:text-5xl font-bold">Nordic</a>
                 </div>
                 <div class="flex-none ">
                 
@@ -56,12 +56,12 @@
             <div class="flex justify-between mt-10 h-[400px] bg-[url('./images/bgbanner.png')] bg-cover bg-center items-center bg-[#12132D] rounded-2xl">
                 <div class="flex-1 text-white ml-4 lg:ml-24 gap-1 lg:gap-2">
                     <h1 class=" text-3xl lg:text-6xl font-bold text-white">Welcome to the</h1>
-                    <h1 class="text-3xl lg:text-6xl font-bold my-3"><span class="text-[#797DFC]">ReTro</span> Forum</h1>
+                    <h1 class="text-3xl lg:text-6xl font-bold my-3"><span class="text-[#797DFC]">Nordic</span> Forum</h1>
                     <p class=" my-6 pr-12 lg:pr-0">Share your favorite opinion and win and wp forum coffee mug!</p>
                    <!-- <img src="./images/bgbanner.png" alt=""> -->
-                    <label class=" mt-4 input w-80 text-black input-bordered flex items-center gap-2">
-                        <input id="input-value" type="text" class="" placeholder="Search" />
-                        <button id="" onclick="searchByCategory()" class="btn w-28  rounded-3xl space-y-6 bg-[#797DFC] text-white">Search</button>
+                    <label class=" mt-4 input w-56 lg:w-96 text-black input-bordered flex items-center gap-0 lg:gap-2">
+                        <input  id="input-value" type="text" class="w-96" placeholder="Search" />
+                        <button id="" onclick="searchByCategory()" class="btn w-16 lg:w-28  rounded-3xl space-y-6 bg-[#797DFC] text-white">Search</button>
                         
                       </label>
                    
@@ -70,7 +70,7 @@
                     
                 </div>
                 <div class="flex-1 text-black  rounded-2xl">
-                    <div class="lg:ml-20 flex flex-col w-full lg:w-96 p-2 lg:p-6 rounded-xl bg-white">
+                    <div class=" ml-8 lg:ml-20 flex flex-col w-48 lg:w-96 p-2 lg:p-6 rounded-xl bg-white">
                         <div class="flex justify-between">
                             <p>Registered Users </p>
                             <p>01</p>
@@ -104,8 +104,8 @@
         </div>
         <!-- Discuss Card section -->
         <section  class=" p-2 lg:p-0">
-            <div class="flex flex-wrap lg:flex-nowrap gap-6" >
-                <div id="post-container" class="  w-full lg:w-4/6 order-2 lg:order-1">
+            <div class="flex flex-wrap lg:flex-nowrap gap-6 my-2 lg:my-4" >
+                <div id="post-container" class=" w-full lg:w-4/6 order-2 lg:order-1">
                     <!-- First Card -->
                     <!-- <div class="card bg-[#F3F3F5] card-side  p-1 lg:p-8 mb-4">
                         <div class="indicator mt-8">
@@ -161,22 +161,7 @@
                                 <p>Mark as read ( <span id="markRead-count">0</span> )</p>
                             </div>
                         </div>
-                        <!-- first comment -->
-                        <!-- <div class="card  bg-base-100 shadow-xl mb-4  p-4">
-                           
-                            <div class="flex items-center justify-between">
-                                <div class="">
-                                    <h2 class="card-title">New movie is released!</h2>
-                                    <p>Click the button to watch on Jetflix app.</p>
-                                </div>
-                                <div class="flex items-center">
-                                    <img src="./images/tabler-icon-eye.png" alt="">
-                                    <p>1532</p>
-                                </div>
-                                
-                            </div>
-                          </div> -->
-                          <!-- second comment -->
+                       
                           
                     </div>
                      
@@ -187,7 +172,7 @@
     
         
         <!-- Join our Forum -->
-        <section class="my-20   p-2 lg:p-0">
+        <section class=" mb-6 lg:mb-14  -mt-10 lg:mt-14  p-2 lg:p-0">
             <div class="flex justify-between mt-10 h-[400px]  bg-cover bg-center items-center bg-[#12132D] rounded-2xl">
                 <div class="flex-1 text-white ml-4 lg:ml-24 gap-1 lg:gap-2">
                     <h1 class=" text-3xl lg:text-6xl font-bold text-white">Join Our Forum</h1>
@@ -216,7 +201,7 @@
             </div>
             <!-- latest post container -->
             <div>
-                <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-20">
+                <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-8 lg:mb-20">
                     <!-- first -->
                     <!-- <div class="card  bg-base-100 shadow-xl p-6 border-2">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
@@ -275,8 +260,8 @@
     <footer>
         <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
             <div class="flex flex-col items-center">
-                <h1 class="font-bold text-3xl">ReTro</h1>
-                <p>Get More information from our social media platforms</p>
+                <h1 class="font-bold text-3xl lg:text-5xl">Nordic</h1>
+                <p class="text-xl">Get More information from our social media platforms</p>
             </div>
             <nav>
                 
