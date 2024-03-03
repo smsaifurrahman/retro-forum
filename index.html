@@ -59,11 +59,14 @@
                     <h1 class="text-3xl lg:text-6xl font-bold my-3"><span class="text-[#797DFC]">ReTro</span> Forum</h1>
                     <p class=" my-6 pr-12 lg:pr-0">Share your favorite opinion and win and wp forum coffee mug!</p>
                    <!-- <img src="./images/bgbanner.png" alt=""> -->
-                    <label class=" mt-4 input w-80 input-bordered flex items-center gap-2">
-                        <input type="text" class="" placeholder="Search" />
-                        <button class="btn w-28  rounded-3xl space-y-6 bg-[#797DFC] text-white">Sign in</button>
+                    <label class=" mt-4 input w-80 text-black input-bordered flex items-center gap-2">
+                        <input id="input-value" type="text" class="" placeholder="Search" />
+                        <button id="" onclick="searchByCategory()" class="btn w-28  rounded-3xl space-y-6 bg-[#797DFC] text-white">Search</button>
                         
                       </label>
+                   
+                    
+                    
                     
                 </div>
                 <div class="flex-1 text-black  rounded-2xl">
@@ -91,6 +94,10 @@
         </section>
     </header>
     <main class="container mx-auto">
+        <div id="loading-spinner" class="text-center hidden">
+            <span class="loading loading-spinner loading-lg"></span>
+        </div>
+
         <div class="text-center mb-10">
             <h1 class="text-4xl font-bold">Let's Discuss</h1>
             <p class="text-xl px-2 lg:px-72 mt-4">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
@@ -151,11 +158,11 @@
                             <h1 class="font-bold text-xl">Title</h1>
                             <div class="flex items-center gap-2">
                                 <img src="./images/Frame.png" alt="">
-                                <p>Mark as read ( <span>4</span> )</p>
+                                <p>Mark as read ( <span id="markRead-count">0</span> )</p>
                             </div>
                         </div>
                         <!-- first comment -->
-                        <div class="card  bg-base-100 shadow-xl mb-4  p-4">
+                        <!-- <div class="card  bg-base-100 shadow-xl mb-4  p-4">
                            
                             <div class="flex items-center justify-between">
                                 <div class="">
@@ -168,7 +175,7 @@
                                 </div>
                                 
                             </div>
-                          </div>
+                          </div> -->
                           <!-- second comment -->
                           
                     </div>
@@ -209,8 +216,26 @@
             </div>
             <!-- latest post container -->
             <div>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-20">
-                    <div class="card  bg-base-100 shadow-xl p-6 border-2">
+                <div id="latest-post-container" class="grid grid-cols-1 lg:grid-cols-3 gap-3 mb-20">
+                    <!-- first -->
+                    <!-- <div class="card  bg-base-100 shadow-xl p-6 border-2">
+                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+                       <div class="flex gap-4 my-4">
+                            <img src="./images/Frame  date.png" alt="">
+                            <p>29 January 2024</p>
+                       </div>
+                       <h1 class="font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
+                       <p class="my-4">Yes, you can run unit tests and view the results directly within the app. </p>
+                       <div class="flex gap-4">
+                            <img src="./images/Ellipse 1.png" alt="">
+                            <div>
+                                <p class="font-bold">Cameron wiliam</p>
+                                <p>Unknown</p>
+                            </div>
+                       </div>
+                    </div> -->
+                    <!-- second -->
+                    <!-- <div class="card  bg-base-100 shadow-xl p-6 border-2">
                         <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
                        <div class="flex gap-4 my-4">
                             <img src="./images/Frame  date.png" alt="">
@@ -241,23 +266,7 @@
                                 <p>Unknown</p>
                             </div>
                        </div>
-                      </div>
-                    <div class="card  bg-base-100 shadow-xl p-6 border-2">
-                        <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
-                       <div class="flex gap-4 my-4">
-                            <img src="./images/Frame  date.png" alt="">
-                            <p>29 January 2024</p>
-                       </div>
-                       <h1 class="font-bold">What will a mars habitat force that impact in our daily life!!!</h1>
-                       <p class="my-4">Yes, you can run unit tests and view the results directly within the app. </p>
-                       <div class="flex gap-4">
-                            <img src="./images/Ellipse 1.png" alt="">
-                            <div>
-                                <p class="font-bold">Cameron wiliam</p>
-                                <p>Unknown</p>
-                            </div>
-                       </div>
-                      </div>
+                      </div> -->
                 </div>
             </div>
         </section>
@@ -286,6 +295,7 @@
             </aside>
           </footer>
     </footer>
+   
 <script src="forum.js"></script>
 </body>
 </html>

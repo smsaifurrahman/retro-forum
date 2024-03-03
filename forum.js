@@ -1,16 +1,40 @@
 const getAllPosts = async () => {
+    loadingSpinner(true)
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
+    //  const res = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
     const data = await res.json();
     const allPosts = data.posts;
     displayEachPost(allPosts)
-    console.log(allPosts[0]);
+    // console.log(allPosts[0]);
 }
 
 // Get all getElementBy ID
 const postContainer = document.getElementById('post-container');
 const markReadContainer = document.getElementById('markRead-container');
+let markReadCount = document.getElementById('markRead-count');
+const latestPostContainer = document.getElementById('latest-post-container');
+const loadSpinner = document.getElementById('loading-spinner');
 
 
+// Function for loading spinner
+
+const loadingSpinner = (isLoading) => {
+    if(isLoading) {
+     
+            loadSpinner.classList.remove('hidden');  
+        
+    }
+    else {
+
+        setTimeout(function() {
+            // Your code to be executed after the delay
+            loadSpinner.classList.add('hidden');
+        }, 2000);
+        
+        
+    }
+    
+}
 
 // function for getting eachPost data and displaying
 const displayEachPost = (allPosts) => {
@@ -74,14 +98,18 @@ const displayEachPost = (allPosts) => {
                         </div>
             `;
             postContainer.appendChild(postCard);
+            loadingSpinner(false);
             
 
         });
 }
 
-
+let count = 0
 const postAsRead = (title,viewCount) => {
-    
+    count++;
+    markReadCount.innerText = count
+   
+
     const  markReadCard = document.createElement('div');
     markReadCard.classList = 'card  bg-base-100 shadow-xl mb-4  p-4';
     markReadCard.innerHTML = `
@@ -99,8 +127,77 @@ const postAsRead = (title,viewCount) => {
     
     `;
     markReadContainer.appendChild(markReadCard)
-    console.log(title,viewCount)
+    
 }
 
 
-getAllPosts()
+const searchByCategory = async () => {
+        let ctgName = document.getElementById('input-value');
+        const categoryNameAll = ctgName.value;
+        const categoryName = categoryNameAll.toLowerCase();    
+        
+        if(categoryName !== 'coding' && categoryName !== 'comedy' && categoryName !== 'music') {
+            ctgName.value = '';
+            alert('Please Enter a valid Category');
+           
+            
+
+        } else {
+       loadingSpinner(true);
+
+        const res = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
+        const data = await res.json();
+        const post = data.posts;
+        ctgName.value = '';
+        postContainer.innerHTML = '';
+        console.log(typeof post)
+
+ 
+       
+        
+        
+        displayEachPost(post); 
+        }
+
+    }
+    // console.log(inputValue)
+
+getAllPosts();
+
+
+// function for fetching latest post
+const getLatestPosts = async () => {
+    
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await res.json();
+    const posts = data;
+  
+    posts.forEach( (post) => {
+        
+        const postCard = document.createElement('div');
+        postCard.classList = 'card  bg-base-100 shadow-xl p-6 border-2';
+        postCard.innerHTML = `
+                    <figure><img src="${post.cover_image}" alt="Shoes" /></figure>
+                                <div class="flex gap-4 my-4">
+                                        <img src="./images/Frame  date.png" alt="">
+                                        <p>${post.author?.posted_date || 'No Publish date'}</p>
+                                </div>
+                                <h1 class="font-bold">${post.title}</h1>
+                                <p class="my-4">${post.description}</p>
+                                <div class="flex gap-4 items-center">
+                                        <div>
+                                             <img src="${post.profile_image}" alt="" class="w-16 h-16 rounded-full">
+                                        </div>
+                            
+                                        <div>
+                                            <p class="text-xl font-bold">${post.author.name}</p>
+                                            <p>${post.author?.designation || 'Unknown'}</p>
+                                        </div>
+                                </div>
+        `;
+        latestPostContainer.appendChild(postCard);
+
+    });
+
+}
+getLatestPosts()
