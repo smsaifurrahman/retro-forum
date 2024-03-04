@@ -1,11 +1,11 @@
 const getAllPosts = async () => {
     loadingSpinner(true);
 
-    await new Promise(resolve => setTimeout(resolve, 600));
+    await new Promise(resolve => setTimeout(resolve, 500));
 
   
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
-    await new Promise(resolve => setTimeout(resolve, 600));
+    await new Promise(resolve => setTimeout(resolve, 500));
     const data = await res.json();
     const allPosts = data.posts;
     displayEachPost(allPosts);
@@ -92,9 +92,9 @@ const displayEachPost = (allPosts) => {
 
                             </div>
                             <div>
-                            <button onclick="postAsRead('${eachPost.title}',${eachPost.view_count})">
+                            <button onclick="postAsRead('${eachPost.title.replace("'", " ")}',${eachPost.view_count})">
                             <img src="./images/email 1.png" alt="">
-                        </button>
+                           </button>
                         
                         
                         
@@ -138,6 +138,9 @@ const postAsRead = (title,viewCount) => {
 }
 
 
+
+
+
 const searchByCategory = async () => {
         let ctgName = document.getElementById('input-value');
         const categoryNameAll = ctgName.value;
@@ -152,10 +155,10 @@ const searchByCategory = async () => {
         } else {
             postContainer.innerHTML = '';
        loadingSpinner(true);
-       await new Promise(resolve => setTimeout(resolve, 600));
+       await new Promise(resolve => setTimeout(resolve, 500));
        
         const res = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
-        await new Promise(resolve => setTimeout(resolve, 600));
+        await new Promise(resolve => setTimeout(resolve, 500));
 
         const data = await res.json();
         const post = data.posts;
