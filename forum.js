@@ -1,14 +1,18 @@
 const getAllPosts = async () => {
     loadingSpinner(true);
- 
+
+    await new Promise(resolve => setTimeout(resolve, 600));
+
   
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`);
-    
+    await new Promise(resolve => setTimeout(resolve, 600));
     const data = await res.json();
     const allPosts = data.posts;
-    displayEachPost(allPosts)
-    // console.log(allPosts[0]);
+    displayEachPost(allPosts);
+
 }
+
+
 
 // Get all getElementBy ID
 const postContainer = document.getElementById('post-container');
@@ -28,11 +32,11 @@ const loadingSpinner = (isLoading) => {
     }
     else {
 
-        setTimeout(function() {
-            // Your code to be executed after the delay
-            loadSpinner.classList.add('hidden');
-        }, 1500);
-        // loadSpinner.classList.add('hidden');
+        // setTimeout(function() {
+        //     // Your code to be executed after the delay
+        //     loadSpinner.classList.add('hidden');
+        // }, 2000);
+        loadSpinner.classList.add('hidden');
         
         
     }
@@ -146,20 +150,24 @@ const searchByCategory = async () => {
             
 
         } else {
+            postContainer.innerHTML = '';
        loadingSpinner(true);
-
+       await new Promise(resolve => setTimeout(resolve, 600));
+       
         const res = await fetch(` https://openapi.programming-hero.com/api/retro-forum/posts?category=${categoryName}`);
+        await new Promise(resolve => setTimeout(resolve, 600));
+
         const data = await res.json();
         const post = data.posts;
         ctgName.value = '';
-        postContainer.innerHTML = '';
-        console.log(typeof post)
+        // postContainer.innerHTML = '';
 
  
        
         
         
         displayEachPost(post); 
+        loadingSpinner(false)
         }
 
     }
@@ -203,5 +211,5 @@ const getLatestPosts = async () => {
     });
 
 }
-// setTimeout(getAllPosts, 2000)
 getLatestPosts()
+// setTimeout(getAllPosts, 2000)
